@@ -12,6 +12,3 @@ st.write("Below is the integrated dashboard from Tableau/Power BI.")
 
 
 
-# Example Power BI Embed
-# powerbi_url = "https://app.powerbi.com/view?r=your-report-id"
-# st.markdown(f'<iframe src="{powerbi_url}" width="100%" height="600"></iframe>', unsafe_allow_html=True)
