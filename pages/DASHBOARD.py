@@ -9,11 +9,27 @@ tableau_url = "https://public.tableau.com/views/OLADATASETANALYSIS/Dashboard1?:s
 
 # Embed the Tableau dashboard
 components.html(f"""
-<div style="width: 100%; display: flex; justify-content: center;">
-    <iframe 
-        src="{tableau_url}" 
-        style="width: 100%; max-width: 1200px; height: 827px; border: none;"
-        allowfullscreen
-    ></iframe>
-</div>
-""", height=850)
+<html>
+  <head>
+    <style>
+      html, body {{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+      }}
+      iframe {{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }}
+    </style>
+  </head>
+  <body>
+    <iframe src="{tableau_url}" allowfullscreen></iframe>
+  </body>
+</html>
+""", height=900)
