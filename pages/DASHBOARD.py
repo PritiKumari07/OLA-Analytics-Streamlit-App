@@ -1,10 +1,19 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
-st.set_page_config(page_title="Dashboard", layout="wide")
+# Title for your Streamlit app
+st.title("📊 OLA Dataset Analysis Dashboard")
 
-st.title("📊 Ola Analytics Dashboard")
+# Tableau Public embed URL
+tableau_url = "https://public.tableau.com/views/OLADATASETANALYSIS/Dashboard1?:showVizHome=no&:embed=true"
 
-st.write("Below is the integrated dashboard from Tableau/Power BI.")
-
-tableau_url = "https://public.tableau.com/app/profile/priti.kumari2802/viz/OLADATASETANALYSIS/Dashboard1"
-st.markdown(f'<iframe src="{tableau_url}" width="1000" height="800"></iframe>', unsafe_allow_html=True)
+# Embed the Tableau dashboard
+components.html(f"""
+<div style="width: 100%; display: flex; justify-content: center;">
+    <iframe 
+        src="{tableau_url}" 
+        style="width: 100%; max-width: 1200px; height: 827px; border: none;"
+        allowfullscreen
+    ></iframe>
+</div>
+""", height=850)
